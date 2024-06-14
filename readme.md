@@ -1,6 +1,6 @@
 # 🦊About
 
-Local GitLab Server
+Local GitLab
 
 # 🐋Deploy
 
