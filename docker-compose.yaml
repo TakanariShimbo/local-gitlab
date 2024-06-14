@@ -6,10 +6,10 @@ services:
     hostname: "${SERVER_IP}"
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://${SERVER_IP}:${HTTP_PORT}'
-        gitlab_rails['gitlab_shell_ssh_port'] = ${SSH_PORT}
+        external_url "http://${SERVER_IP}:${HTTP_PORT}"
+        gitlab_rails['gitlab_shell_ssh_port'] = "${SSH_PORT}"
     ports:
-      - "${HTTP_PORT}:8929"
+      - "${HTTP_PORT}:${HTTP_PORT}"
       - "${SSH_PORT}:22"
     volumes:
       - "${GITLAB_HOME}/config:/etc/gitlab"
