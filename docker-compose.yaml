@@ -1,0 +1,18 @@
+version: "3.6"
+services:
+  web:
+    image: "gitlab/gitlab-ee:latest"
+    restart: always
+    hostname: "$SERVER_IP"
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://$SERVER_IP:$HTTP_PORT'
+        gitlab_rails['gitlab_shell_ssh_port'] = $SSH_PORT
+    ports:
+      - "$HTTP_PORT:8929"
+      - "$SSH_PORT:22"
+    volumes:
+      - "$GITLAB_HOME/config:/etc/gitlab"
+      - "$GITLAB_HOME/logs:/var/log/gitlab"
+      - "$GITLAB_HOME/data:/var/opt/gitlab"
+    shm_size: "256m"
