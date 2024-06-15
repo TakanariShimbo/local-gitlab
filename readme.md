@@ -20,3 +20,10 @@ SSH_PORT="52424"            # specifying the port number for SSH connections.
 ```
 docker compose up -d
 ```
+
+#### 3 login as root
+
+```
+username: root
+password: check file of .volumes/config/trusted-certs/initial_root_password
+```
