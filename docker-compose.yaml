@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   web:
-    image: "gitlab/gitlab-ee:17.0.2-ee.0"
+    image: "gitlab/gitlab-ce:17.0.2-ce.0"
 
     restart: always
 
